@@ -1,4 +1,9 @@
-vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after') vim.o.packpath = vim.o.runtimepath vim.cmd('source ~/.vimrc')
+-- Check if .vimrc exists and source it if found
+if vim.fn.filereadable(vim.fn.expand('~/.vimrc')) == 1 then
+    vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after')
+    vim.o.packpath = vim.o.runtimepath
+    vim.cmd('source ~/.vimrc')
+end
 --[[
 
 =====================================================================
